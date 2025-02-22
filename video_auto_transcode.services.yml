@@ -1,0 +1,5 @@
+services:
+  # Name of this service.
+  video_auto_transcode_transcoder:
+    class: '\Drupal\video_auto_transcode\AutoTranscoder'
+

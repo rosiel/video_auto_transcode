@@ -1,0 +1,5 @@
+name: Video Auto Transcode
+description: 'Transcodes uploaded videos to a web accessible format.'
+core_version_requirement: '^10 || ^11'
+type: module
+package: Media

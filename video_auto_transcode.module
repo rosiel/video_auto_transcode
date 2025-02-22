@@ -1,0 +1,11 @@
+<?php
+
+use \Drupal\Core\Entity\EntityInterface;
+
+/**
+ * Implements hook_ENITTY_TYPE_presave.
+ */
+function video_auto_transcode_media_presave(EntityInterface $entity) {
+  \Drupal::service('video_auto_transcode_transcoder')->auto_transcode($entity);
+}
+

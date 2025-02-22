@@ -1,0 +1,24 @@
+{
+    "name": "drupal/video_auto_transcode",
+    "description": "Transcode videos on upload from mov to mp4",
+    "type": "drupal-module",
+    "keywords": ["Drupal", "media", "video", "transcode"],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Rosie Le Faive",
+            "homepage": "https://www.drupal.org/u/rosiel",
+            "role": "Maintainer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "drupal": {
+            "package": "Field types",
+            "version": "8.x-2.x"
+        }
+    },
+    "require": {
+        "php-ffmpeg/php-ffmpeg": "^1.3.1"
+    }
+}
