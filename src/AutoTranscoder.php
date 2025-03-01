@@ -12,12 +12,12 @@ use FFMpeg\Format\Video;
 
 class AutoTranscoder {
   use StringTranslationTrait;
-  const SOURCE_FIELD = 'field_media_video_file';
+  const SOURCE_FIELD = 'field_media_video_file_1';
   const DESTINATION_FIELD = 'field_transcoded_files';
 
   public function auto_transcode(MediaInterface $media) {
     # Test that the media has both source and dest fields
-    # If there is a file in the source field then copy it
+    # If there is a file in the source field then transcode it
     # to the dest field. If not, throw an error.
     if ($media->hasField(self::SOURCE_FIELD)
       and $media->hasField(self::DESTINATION_FIELD)
@@ -49,7 +49,7 @@ class AutoTranscoder {
   public function transcode_file($file, $output = 'mp4')
   {
     # Get the filename .
-    $path = $file->createFileURL(TRUE);
+    $path = $file->createFileURL(FALSE);
     if (substr($path, 0, 6) == '/sites') {
       $path = ltrim($path, '/');
     }
@@ -80,7 +80,9 @@ class AutoTranscoder {
       $video->save(new Video\WebM(), $webm_filepath);
       return $webm_filepath;
     }
+    return;
   }
+
 }
 
 
