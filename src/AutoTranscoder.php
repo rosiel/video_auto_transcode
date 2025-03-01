@@ -50,7 +50,7 @@ class AutoTranscoder {
   {
     # Get the filename .
     $path = $file->createFileURL(FALSE);
-    if (substr($path, 0, 6) == '/sites') {
+    if (substr($path, 0, 1) == '/') {
       $path = ltrim($path, '/');
     }
     # Throw it in double quotes to work with spaces in filenames.
